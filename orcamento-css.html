@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamento (CSS) - Termo Polar</title>
-    <!-- Aqui entra a mágica do CSS, sem nenhum JS! -->
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
 
     <header id="cabecalho">
@@ -25,33 +26,32 @@
     </nav>
 
     <main class="container">
-        <h2>Pré-solicitação de Atendimento</h2>
-        <p>Preencha os detalhes técnicos para adiantarmos o seu orçamento com a nossa equipe. <small style="color: var(--primary); font-weight: 600;">(Nota: Taxa de visita técnica R$ 180,00)</small></p>
+        <h2>Pré-solicitação de Atendimento (Apenas CSS)</h2>
+        <p>Preencha os detalhes técnicos. <small style="color: var(--primary); font-weight: 600;">(Nota: Demonstração
+                Visual Estática)</small></p>
         <br>
 
-        <form onsubmit="event.preventDefault(); alert('Este é apenas um protótipo visual (HTML+CSS). Para ver o sistema completo, acesse a versão com JavaScript.');" class="form-orcamento">
-            
-            <!-- Uso da classe form-grid criada no CSS para dividir em 2 colunas -->
+        <form
+            onsubmit="event.preventDefault(); alert('Este é apenas um protótipo visual (HTML+CSS). Para ver o sistema de faturação completo, acesse a versão de Solicitar Orçamento (com JavaScript).');"
+            class="form-orcamento">
+
             <fieldset class="form-grid">
                 <legend>Dados do Cliente</legend>
-                
                 <div>
                     <label for="nome">Nome Completo:</label>
                     <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
                 </div>
-                
                 <div>
                     <label for="whatsapp">WhatsApp para retorno:</label>
                     <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(83) 90000-0000">
                 </div>
-
                 <div style="grid-column: 1 / -1;">
                     <label for="endereco">Endereço da Visita (Bairro e Rua):</label>
-                    <input type="text" id="endereco" name="endereco" required placeholder="Onde o serviço será realizado?">
+                    <input type="text" id="endereco" name="endereco" required
+                        placeholder="Onde o serviço será realizado?">
                 </div>
             </fieldset>
-
-            <fieldset class="radio-group">
+             <fieldset class="radio-group">
                 <legend>Tipo de Imóvel</legend>
                 
                 <label>
@@ -64,7 +64,6 @@
 
             <fieldset class="checkbox-group">
                 <legend>Quais serviços você precisa?</legend>
-                
                 <label><input type="checkbox" name="servico" value="Instalação"> Instalação</label>
                 <label><input type="checkbox" name="servico" value="Higienização"> Higienização</label>
                 <label><input type="checkbox" name="servico" value="Manutenção Corretiva"> Manutenção Corretiva</label>
@@ -72,7 +71,7 @@
                 <label><input type="checkbox" name="servico" value="Infraestrutura (Tubulação)"> Infraestrutura</label>
             </fieldset>
 
-            <fieldset>
+                <fieldset>
                 <legend>Sobre o Equipamento</legend>
                 
                 <label for="capacidade">Capacidade do Ar-Condicionado:</label>
@@ -97,11 +96,11 @@
         </form>
     </main>
 
-     <footer id="rodape">
+    <footer id="rodape">
         <p>Termo Polar Ltda. | CNPJ 99.999.999/0001-99</p>
         <p>Rodovia BR-230, Km 22, s/n – Bairro de Água Fria, João Pessoa – PB, CEP: 58053-000</p>
     </footer>
 
-    <!-- Note que não incluímos o <script src="script.js"></script> nesta versão -->
 </body>
+
 </html>

@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <title>Orçamento (HTML Puro) - Termo Polar</title>
 </head>
+
 <body>
 
     <h1>Termo Polar - Controle de Climatização</h1>
-    
+
     <nav>
-       <a href="main.html">Início</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="orcamento.html">Solicitar Orçamento</a>
-        <a href="orcamento-puro.html">Orçamento (Puro)</a>
-        <a href="orcamento-css.html">Orçamento (Com CSS)</a>
+        <a href="main.html">Início</a> |
+        <a href="servicos.html">Serviços</a> |
+        <a href="orcamento.html">Solicitar Orçamento</a> |
+        <a href="orcamento-puro.html">Orçamento (Puro)</a> |
+        <a href="orcamento-css.html">Orçamento (Com CSS)</a> |
         <a href="contato.html">Contato</a>
     </nav>
 
     <hr>
 
-    <h2>Pré-solicitação de Atendimento</h2>
+    <h2>Pré-solicitação de Atendimento (HTML PURO)</h2>
     <p>Preencha os detalhes técnicos para adiantarmos o seu orçamento com a nossa equipe.</p>
-    <p><small>(Nota: A visita técnica com consultoria de climatização tem o custo de R$ 180,00, abatidos no fechamento do serviço).</small></p>
 
-    <form onsubmit="event.preventDefault(); alert('Este é apenas um protótipo visual (HTML+CSS). Para ver o sistema completo, acesse a versão com JavaScript.');" class="form-orcamento">
-        
+    <form action="#" method="POST">
         <fieldset>
             <legend>Dados do Cliente</legend>
-            
+
             <label for="nome">Nome Completo:</label><br>
             <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo"><br><br>
-            
+
             <label for="whatsapp">WhatsApp para retorno:</label><br>
             <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(83) 90000-0000"><br><br>
 
-            <label for="endereco">Endereço da Visita (Bairro e Rua):</label><br>
+            <label for="endereco">Endereço da Visita:</label><br>
             <input type="text" id="endereco" name="endereco" required placeholder="Onde o serviço será realizado?">
         </fieldset>
         <br>
-
+        
         <fieldset>
             <legend>Tipo de Imóvel</legend>
             
@@ -66,7 +66,7 @@
             <label for="desinst">Desinstalação</label><br>
             
             <input type="checkbox" id="infra" name="servico" value="Infraestrutura (Tubulação)">
-            <label for="infra">Infraestrutura</label>
+         <label for="infra">Infraestrutura</label>
         </fieldset>
         <br>
 
@@ -87,17 +87,29 @@
 
             <label for="detalhes">Descreva a situação:</label><br>
             <textarea id="detalhes" name="detalhes" rows="4" cols="50" placeholder="Ex: O ar parou de gelar, pinga água..."></textarea>
+
+        <fieldset>
+            <legend>Quais serviços você precisa?</legend>
+            <input type="checkbox" id="inst" name="servico" value="Instalação">
+            <label for="inst">Instalação</label><br>
+
+            <input type="checkbox" id="desinst" name="servico" value="Desinstalação">
+            <label for="desinst">Desinstalação</label><br>
+
+            <input type="checkbox" id="manut" name="servico" value="Manutenção e Limpeza">
+            <label for="manut">Manutenção e Limpeza</label><br>
         </fieldset>
         <br>
 
         <button type="submit">Enviar Solicitação</button>
-        
     </form>
-    <br>
-     <footer id="rodape">
+
+    <hr>
+    <footer id="rodape">
         <p>Termo Polar Ltda. | CNPJ 99.999.999/0001-99</p>
         <p>Rodovia BR-230, Km 22, s/n – Bairro de Água Fria, João Pessoa – PB, CEP: 58053-000</p>
     </footer>
 
 </body>
+
 </html>
