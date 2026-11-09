@@ -1,11 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Orçamento - Termo Polar</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    
+
+    <header id="cabecalho">
+        <a href="main.html">
+            <img src="logo-claro.png" alt="Logotipo Termo Polar" class="logo-oficial">
+        </a>
+    </header>
+
+    <nav id="menu">
+        <a href="main.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="orcamento.html">Solicitar Orçamento</a>
+        <a href="orcamento-puro.html">Orçamento (Puro)</a>
+        <a href="orcamento-css.html">Orçamento (Com CSS)</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <main class="container">
+        
+        <!-- O Formulário de Entrada -->
+        <div id="areaFormulario">
+            <h2>Pré-solicitação de Atendimento</h2>
+            <p>Preencha os detalhes técnicos para gerarmos o seu documento de orçamento.</p>
+            <br>
+
+            <form id="formOrcamento" class="form-orcamento">
+                <fieldset class="form-grid">
+                    <legend>Dados do Cliente</legend>
+                    <div>
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                    </div>
+                    <div>
+                        <label for="whatsapp">WhatsApp para contato:</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(83) 90000-0000" maxlength="15">
+                    </div>
+                    <div style="grid-column: 1 / -1;">
+                        <label for="endereco">Endereço da Visita (Bairro e Rua):</label>
+                        <input type="text" id="endereco" name="endereco" required placeholder="Ex: Rua Abelardo Targino da Fonseca...">
+                    </div>
+                </fieldset>
+
+                <fieldset class="checkbox-group" id="grupoServicos">
+                    <legend>Quais serviços você precisa?</legend>
+                    <label><input type="checkbox" name="servico" value="Instalação"> Instalação</label>
+                    <label><input type="checkbox" name="servico" value="Desinstalação"> Desinstalação</label>
+                    <label><input type="checkbox" name="servico" value="Manutenção e Limpeza"> Manutenção e Limpeza</label>
+                    <label><input type="checkbox" name="servico" value="Infraestrutura (por metro)"> Infraestrutura (Tubulação)</label>
+                    <label><input type="checkbox" name="servico" value="Combo: Desinstalação + Instalação"> Combo: Desinstalação + Instalação</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Capacidade do Equipamento</legend>
+                    <select id="capacidade" name="capacidade">
+                        <option value="9.000 e 12.000 BTUS">9.000 a 12.000 BTUs</option>
+                        <option value="18.000 a 24.000 BTUS">18.000 a 24.000 BTUs</option>
+                        <option value="Acima de 24.000 BTUS">Acima de 24.000 BTUs</option>
+                        <option value="Ainda não sei">Ainda não sei a capacidade</option>
+                    </select>
+                </fieldset>
+
+                <!-- Caixa de Texto Livre -->
+                <fieldset>
+                    <legend>Detalhes Adicionais</legend>
+                    <label for="detalhes">Descreva o que precisa (opcional):</label>
+                    <textarea id="detalhes" name="detalhes" rows="3" placeholder="Ex: Preciso de 3 metros de infraestrutura, ou o ar parou de gelar..."></textarea>
+                </fieldset>
+
+                <button type="submit" id="btnEnviar" class="btn" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Gerar Orçamento Oficial</button>
+            </form>
+        </div>
+
+        <!-- O Documento Gerado (Escondido até o envio) -->
+        <div id="areaRecibo" class="recibo-wrapper">
+            <div class="recibo-header">
+                <div class="recibo-info-empresa">
+                    <img src="logo-claro.png" alt="Termo Polar" style="max-height: 60px; margin-bottom: 10px;">
+                    <p><strong>Termo Polar</strong></p>
+                    <p>CNPJ: 32.573.642/0001-76</p>
+                    <p>(83) 99673-5434 / (83) 99661-2910</p>
+                    <p>Cidade: João Pessoa | Estado: Paraíba</p>
+                </div>
+                <div class="recibo-titulo">
+                    <h3>Orçamento</h3>
+                    <p>Nº do Documento: <strong id="docNum"></strong></p>
+                    <p>Data: <strong id="docData"></strong></p>
+                </div>
+            </div>
+
+            <div class="recibo-info-cliente" style="margin-bottom: 2rem;">
+                <p><strong>Cliente:</strong> <span id="docCliente"></span></p>
+                <p><strong>Contato:</strong> <span id="docContato"></span></p>
+                <p><strong>Endereço:</strong> <span id="docEndereco"></span></p>
+                <!-- Área onde o texto livre do cliente será impresso -->
+                <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--border-color);">
+                    <p><strong>Solicitação do Cliente:</strong> <br>
+                    <span id="docDetalhes" style="color: var(--text-muted); font-style: italic;"></span></p>
+                </div>
+            </div>
+
+            <table class="tabela-recibo">
+                <thead>
+                    <tr>
+                        <th>Serviços</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="docTabelaBody">
+                    <!-- Linhas injetadas pelo JS -->
+                </tbody>
+            </table>
+
+            <div class="recibo-totais">
+                <p>TOTAL SERVIÇOS: <span id="docTotalServicos"></span></p>
+                <h4>Preço Final: <span id="docTotalFinal"></span></h4>
+            </div>
+
+            <div class="recibo-obs">
+                <p><strong>Observações:</strong> Garantia da mão de obra: 90 dias.</p>
+                <p>A Termo Polar afirma como verídicas todas as informações supracitadas.</p>
+            </div>
+
+            <button onclick="window.print()" class="btn" style="margin-top: 20px; background-color: var(--secondary);">🖨️ Imprimir / Salvar PDF</button>
+            <button onclick="location.reload()" class="btn" style="margin-top: 20px; margin-left: 10px; background-color: #e2e8f0; color: #0f172a;">Fazer Novo Orçamento</button>
+        </div>
+
+    </main>
+
+     <footer id="rodape">
+        <p>Termo Polar Ltda. | CNPJ 99.999.999/0001-99</p>
+        <p>Rodovia BR-230, Km 22, s/n – Bairro de Água Fria, João Pessoa – PB, CEP: 58053-000</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
