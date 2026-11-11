@@ -11,12 +11,12 @@
     <h1>Termo Polar - Controle de Climatização</h1>
 
     <nav>
-        <a href="main.html">Início</a> |
-        <a href="servicos.html">Serviços</a> |
-        <a href="orcamento.html">Solicitar Orçamento</a> |
-        <a href="orcamento-puro.html">Orçamento (Puro)</a> |
-        <a href="orcamento-css.html">Orçamento (Com CSS)</a> |
-        <a href="contato.html">Contato</a>
+        <a href="../html/main.html">Início</a> |
+        <a href="../html/servicos.html">Serviços</a> |
+        <a href="../html/orcamento.html">Solicitar Orçamento</a> |
+        <a href="../html/orcamento-puro.html">Orçamento (Puro)</a> |
+        <a href="../html/orcamento-css.html">Orçamento (Com CSS)</a> |
+        <a href="../html/contato.html">Contato</a>
     </nav>
 
     <hr>
@@ -24,7 +24,9 @@
     <h2>Pré-solicitação de Atendimento (HTML PURO)</h2>
     <p>Preencha os detalhes técnicos para adiantarmos o seu orçamento com a nossa equipe.</p>
 
-    <form action="#" method="POST">
+    <form
+            onsubmit="event.preventDefault(); alert('Este é apenas um protótipo visual (HTML+CSS). Para ver o sistema de faturação completo, acesse a versão de Solicitar Orçamento (com JavaScript).');"
+            class="form-orcamento">
         <fieldset>
             <legend>Dados do Cliente</legend>
 
