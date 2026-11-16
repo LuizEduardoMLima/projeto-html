@@ -11,18 +11,18 @@
 <body>
 
     <header id="cabecalho">
-        <a href="../html/main.html">
+        <a href="main.html">
             <img src="../imagens/logo-claro.png" alt="Logotipo Termo Polar" class="logo-oficial">
         </a>
     </header>
 
     <nav id="menu">
-        <a href="../html/main.html">Início</a>
-        <a href="../html/servicos.html">Serviços</a>
-        <a href="../html/orcamento.html">Solicitar Orçamento</a>
-        <a href="../html/orcamento-puro.html">Orçamento (Puro)</a>
-        <a href="../html/orcamento-css.html">Orçamento (Com CSS)</a>
-        <a href="../html/contato.html">Contato</a>
+       <a href="main.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="orcamento.html">Solicitar Orçamento</a>
+        <a href="orcamento-puro.html">Contato</a>
+        <a href="orcamento-css.html">Contato</a>
+        <a href="contato.html">Contato</a>
         <button id="themeToggle" class="theme-toggle" title="Alternar Modo Escuro">🌙</button>
     </nav>
 
@@ -30,22 +30,22 @@
         <h2>Canais de Atendimento</h2>
         <p>Precisa de ajuda imediata ou quer conversar antes de solicitar a visita técnica? Entre em contato.</p>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 30px;">
-            <div style="flex: 1; min-width: 250px;">
+        <div class="contato-grid">
+            <div class="contato-coluna">
                 <h3>Nossos Dados</h3>
-                <ul style="list-style: none; padding-top: 10px; line-height: 2;">
-                    <li><strong>📍 Endereço:</strong> Rodovia BR-230, Km 22, s/n – Bairro de Água Fria, João Pessoa –
-                        PB, CEP: 58053-000</li>
+                <ul class="lista-contato">
+                    <li><strong>📍 Endereço:</strong> Rodovia BR-230, Km 22, s/n – Bairro de Água Fria, João Pessoa – PB, CEP: 58053-000</li>
                     <li><strong>📞 WhatsApp:</strong> (83) 99999-9999</li>
                     <li><strong>📧 E-mail:</strong> unipe@termopolar.com.br</li>
                 </ul>
             </div>
 
-            <div style="flex: 1; min-width: 250px;">
+            <div class="contato-coluna">
                 <h3>Envie uma Mensagem</h3>
                 <form
                     onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso, em breve voce recebera um retorno!'); this.reset();"
-                    class="form-orcamento">
+                    class="form-orcamento form-contato">
+                    <label for="nome_contato">Nome:</label>
                     <input type="text" id="nome_contato" name="nome_contato" required>
 
                     <label for="email_contato">E-mail:</label>
@@ -54,7 +54,7 @@
                     <label for="mensagem">Sua Mensagem:</label>
                     <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
-                    <button type="submit" class="btn" style="width: 100%;">Enviar Mensagem</button>
+                    <button type="submit" class="btn btn-full">Enviar Mensagem</button>
                 </form>
             </div>
         </div>

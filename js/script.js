@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Sistema Termo Polar Iniciado!");
-
   // --- 1. MODO ESCURO (DARK MODE) COM LOCALSTORAGE ---
   const themeToggle = document.getElementById("themeToggle");
 
@@ -94,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!camposValidos) {
         alert(
-          "Atenção: Por favor, preencha corretamente os campos destacados em vermelho antes de gerar o orçamento.",
+          "Atenção: Por favor, preencha corretamente os campos destacados em vermelho antes de gerar o orçamento."
         );
         return;
       }
@@ -106,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const detalhes = document.getElementById("detalhes").value;
 
       const checkboxes = document.querySelectorAll(
-        'input[name="servico"]:checked',
+        'input[name="servico"]:checked'
       );
       const tbody = document.getElementById("docTabelaBody");
 
@@ -177,11 +175,11 @@ document.addEventListener("DOMContentLoaded", function () {
   cards.forEach((card) => {
     card.addEventListener(
       "mouseenter",
-      () => (card.style.borderColor = "var(--primary)"),
+      () => (card.style.borderColor = "var(--primary)")
     );
     card.addEventListener(
       "mouseleave",
-      () => (card.style.borderColor = "var(--border-color)"),
+      () => (card.style.borderColor = "var(--border-color)")
     );
   });
 });
